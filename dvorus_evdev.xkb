@@ -1,0 +1,290 @@
+xkb_keymap {
+	xkb_keycodes  { 
+          include "evdev+aliases(qwerty)"
+     };
+	xkb_types     { include "complete"	};
+    xkb_geometry  { include "pc(pc105)"	};
+	xkb_compatibility {
+		include "complete"
+    interpret.repeat= False;
+    setMods.clearLocks= True;
+    latchMods.clearLocks= True;
+    latchMods.latchToLock= True;
+    virtual_modifiers AltGr;
+
+
+    interpret ISO_Group_Latch { 
+            useModMapMods= level1;
+            virtualModifier= AltGr;
+            action = LatchGroup(group=+2); };
+    interpret ISO_Last_Group { action = LockGroup(group=3); };
+    interpret ISO_First_Group { action = LockGroup(group=1); };
+    #interpret ISO_Next_Group { 
+    #        useModMapMods= level1;
+    #        virtualModifier= AltGr;
+    #        action = LockGroup(group=+2);
+    #};
+    };
+
+    xkb_symbols {
+        include "pc+inet(evdev)+terminate(ctrl_alt_bksp)"
+        key <ESC> { [ Caps_Lock, Caps_Lock ] };
+
+        virtual_modifiers AltGr;
+    key <TLDE> { [ ISO_Next_Group , ISO_Next_Group ] };
+    key <LFSH> {
+        virtualMods= AltGr,
+        symbols[Group1] = [ ISO_First_Group ]
+    };  
+    key <RTSH> {
+        virtualMods= AltGr,
+        symbols[Group1] = [ ISO_Last_Group ]
+    };  
+
+        #key <AD02> { [ ISO_Last_Group ] };
+        #key <AD03> { [ ISO_First_Group ] };
+        #key <AD05> { [ ISO_Next_Group ] };
+key  <AE01>  {  symbols[Group1] = [  q ,  Q       ] , 
+                symbols[Group2] = [  U0308     ]  
+               ,symbols[Group3] = [ Cyrillic_yu        ,  Cyrillic_YU ]
+               ,symbols[Group4] = [ quotedbl ]
+};
+key  <AE02>  {  symbols[Group1] = [ k , K           ]
+               ,symbols[Group2] = [ at ]
+               ,symbols[Group3] = [ Cyrillic_yeru        ,  Cyrillic_YERU ]
+               ,symbols[Group4] = [ at ]
+};
+key  <AE03>  {  symbols[Group1] = [  y           ,  Y          ]
+               ,symbols[Group2] = [ numbersign , numbersign ]
+               ,symbols[Group3] = [ Cyrillic_ya        ,  Cyrillic_YA ]
+               ,symbols[Group4] = [ numerosign , numerosign ]
+};
+key  <AE04>  {  symbols[Group1] = [  u           ,  U          ]
+               ,symbols[Group2] = [ dollar , dollar ]
+               ,symbols[Group3] = [ Cyrillic_u        ,  Cyrillic_U ]
+               ,symbols[Group4] = [ U20BD , U20BD ]
+};
+key  <AE05>  {  symbols[Group1] = [  apostrophe           ,  bar          ] , 
+                symbols[Group2] = [   ampersand     ]  
+               ,symbols[Group3] = [ Cyrillic_softsign , Cyrillic_SOFTSIGN ]
+               ,symbols[Group4] = [ Cyrillic_hardsign , Cyrillic_HARDSIGN ]
+};
+key  <AE06>  { [ Left ] };
+key  <AE07>  { [ Right ] };
+key  <AE08>  {  symbols[Group1] = [  d           ,  D          ] , 
+		symbols[Group2] = [   less ,  U2264         ]  
+               ,symbols[Group3] = [ Cyrillic_de        ,  Cyrillic_DE ]
+               ,symbols[Group4] = [ less , U2264 ]
+};
+key  <AE09>  {  symbols[Group1] = [  l           ,  L          ] , 
+                symbols[Group2] = [   greater , U2265       ]  
+               ,symbols[Group3] = [ Cyrillic_el        ,  Cyrillic_EL ]
+               ,symbols[Group4] = [ greater , U2265 ]
+};
+key  <AE10>  {  symbols[Group1] = [  m           ,  M          ] , 
+                symbols[Group2] = [   braceleft     ]  
+               ,symbols[Group3] = [  Cyrillic_em       ,  Cyrillic_EM ]
+               ,symbols[Group4] = [  guillemotleft , doublelowquotemark ]
+};
+key  <AE11>  {  symbols[Group1] = [  b           ,  B          ] , 
+                symbols[Group2] = [   braceright    ]  
+               ,symbols[Group3] = [ Cyrillic_be        ,  Cyrillic_BE ]
+               ,symbols[Group4] = [ guillemotright , leftdoublequotemark ]
+};
+key  <AE12>  {  symbols[Group1] = [  z           ,  Z          ] , 
+                symbols[Group2] = [   U0301    ]  
+               ,symbols[Group3] = [ Cyrillic_ze    ,  Cyrillic_ZE ]
+               ,symbols[Group4] = [ U0301 ]
+};
+key <BKSP> { [ Tab , Tab ] };
+key <TAB>  { [  BackSpace,    BackSpace ] };
+#key <TAB>  { symbols[Group1] = [  BackSpace,    BackSpace ]
+#            ,actions[Group1]=[RedirectKey(key=<BKSP>),RedirectKey(key=<BKSP>)]  };
+#key <BKSP> { symbols[Group1] = [ Tab , Tab ]
+#             ,actions[Group1]=[RedirectKey(key=<TAB>),RedirectKey(key=<TAB>)] };
+key  <AD01>  { [ ISO_Level2_Latch ] };
+modifier_map Shift { <AD01> };
+key  <AD02>  {  symbols[Group1] = [  s           ,  S          ] , 
+                symbols[Group2] = [   bracketleft   ]  
+               ,symbols[Group3] = [ Cyrillic_es         ,  Cyrillic_ES ]
+               ,symbols[Group4] = [ Cyrillic_sha       ,  Cyrillic_SHA ]
+};
+key  <AD03>  {  symbols[Group1] = [  o           ,  O          ] , 
+                symbols[Group2] = [   bracketright  ]  
+               ,symbols[Group3] = [ Cyrillic_o         ,  Cyrillic_O ]
+               ,symbols[Group4] = [ Cyrillic_io        ,  Cyrillic_IO ]
+};
+key  <AD04>  {  symbols[Group1] = [  e           ,  E          ] , 
+                symbols[Group2] = [   underscore             ,  underscore           ]   
+                ,symbols[Group3] = [  Cyrillic_ie        ,  Cyrillic_IE          ] 
+                ,symbols[Group4]= [   Cyrillic_e         ,  Cyrillic_E         ]
+};
+key  <AD05>  {  symbols[Group1] = [  a           ,  A          ]
+               ,symbols[Group2] = [ backslash ]
+               ,symbols[Group3] = [ Cyrillic_a        ,  Cyrillic_A ]
+               ,symbols[Group4] = [ backslash ]
+};
+key  <AD06>  { [ Up ] };
+key  <AD07>  {  symbols[Group1] = [  r           ,  R          ]
+                # semicolon, non-breaking space
+               ,symbols[Group2] = [   semicolon     ,  U00A0   ]   
+               ,symbols[Group3] = [ Cyrillic_er        ,  Cyrillic_ER ]
+               ,symbols[Group4] = [ semicolon , U00A0 ]
+};
+key  <AD08>  {  symbols[Group1] = [  n           ,  N          ] , 
+                symbols[Group2] = [   quotedbl  ]   
+               ,symbols[Group3] = [ Cyrillic_en , Cyrillic_EN ]
+               ,symbols[Group4] = [ Cyrillic_shcha , Cyrillic_SHCHA ]
+};
+key  <AD09>  {  symbols[Group1] = [  w           ,  W          ] , 
+                symbols[Group2] = [   colon         ,  emdash      ]   
+               ,symbols[Group3] = [ Cyrillic_ve        ,  Cyrillic_VE ]
+               ,symbols[Group4] = [ colon         ,  emdash ]
+};
+key  <AD11>  {  symbols[Group1] = [  v           ,  V          ] , 
+                symbols[Group2] = [   percent     , percent    ]  
+               ,symbols[Group3] = [ Cyrillic_che        ,  Cyrillic_CHE ]
+               ,symbols[Group4] = [ percent , percent ]
+};
+key  <AD12>  {  symbols[Group1] = [  j           ,  J          ] ,    
+                # tilde, no-break space
+                symbols[Group2] = [   asciitilde , U00A0          ]   
+               ,symbols[Group3] = [ Cyrillic_shorti       ,  Cyrillic_SHORTI ]
+                # tilde, no-break space
+               ,symbols[Group4] = [ asciitilde  , U00A0 ]
+};
+key <CAPS> { [ Escape , Escape ] };
+key  <AC01>  {  symbols[Group1] = [  period      ,  exclam     ] , 
+                symbols[Group2] = [   period               ]   
+               ,symbols[Group3] = [ period      ,  exclam ]
+               ,symbols[Group4] = [ period          ]
+};
+key  <AC02>  {  symbols[Group1] = [  comma       ,  question   ] , 
+                symbols[Group2] = [   comma         ,  comma       ]   
+               ,symbols[Group3] = [ comma       ,  question ]
+               ,symbols[Group4] = [ comma         ,  comma ]
+};
+key  <AC03>  {  symbols[Group1] = [  p           ,  P          ] , 
+                symbols[Group2] = [   parenleft     ,  parenleft   ]   
+               ,symbols[Group3] = [ Cyrillic_pe       ,  Cyrillic_PE ]
+               ,symbols[Group4] = [ parenleft     ,  parenleft ]
+};
+key  <AC04>  {  symbols[Group1] = [  i           ,  I          ] , 
+                symbols[Group2] = [   asciicircum   ]  
+               ,symbols[Group3] = [ Cyrillic_i      ,  Cyrillic_I ]
+               ,symbols[Group4] = [ Cyrillic_tse , Cyrillic_TSE ]
+};
+key  <AC05>  {  symbols[Group1] = [  x           ,  X          ] , 
+                symbols[Group2] = [   parenright    ,  parenright  ]   
+               ,symbols[Group3] = [ Cyrillic_zhe        ,  Cyrillic_ZHE ]
+               ,symbols[Group4] = [ parenright    ,  parenright ]
+};
+key  <AC06>  { [ Down ] };
+key  <AC07>  {  symbols[Group1] = [  c           ,  C          ]
+                # plus, plus-minus
+               ,symbols[Group2] = [   plus          ,  U00B1       ]   
+               ,symbols[Group3] = [ Cyrillic_ka        ,  Cyrillic_KA ]
+               ,symbols[Group4] = [   plus          ,  U00B1       ]   
+};
+key  <AC08>  {  symbols[Group1] = [  t           ,  T          ] , 
+               # minus, non-breaking hyphen
+                symbols[Group2] = [   minus , U2011         ]   
+               ,symbols[Group3] = [ Cyrillic_te        ,  Cyrillic_TE ]
+               # minus, non-breaking hyphen
+               ,symbols[Group4] = [ minus, U2011 ]
+};
+key  <AC09>  {  symbols[Group1] = [  h           ,  H          ]
+                # equal, not equal
+               ,symbols[Group2] = [   equal, U2260 ]  
+               ,symbols[Group3] = [ Cyrillic_ha        ,  Cyrillic_HA ]
+                # equal, not equal
+               ,symbols[Group4] = [   equal, U2260 ]  
+};
+key  <AC10>  {  symbols[Group1] = [  g           ,  G          ] , 
+                symbols[Group2] = [   slash         ,  U00F7       ]   
+               ,symbols[Group3] = [ Cyrillic_ghe        ,  Cyrillic_GHE ]
+               ,symbols[Group4] = [ slash              ,  U00F7 ]
+};
+key  <AC11>  {  symbols[Group1] = [  f           ,  F          ] , 
+                symbols[Group2] = [   asterisk      ,  U00D7       ]   
+               ,symbols[Group3] = [ Cyrillic_ef       ,  Cyrillic_EF ]
+               ,symbols[Group4] = [ U00B7           ,  U00D7 ]
+};
+key <AD10> {         
+   symbols[Group1] = [ NoSymbol , NoSymbol , NoSymbol , NoSymbol ],
+   symbols[Group2] = [ NoSymbol , NoSymbol , NoSymbol , NoSymbol ],
+   symbols[Group3] = [ NoSymbol , NoSymbol , NoSymbol , NoSymbol ],
+   symbols[Group4] = [ NoSymbol , NoSymbol , NoSymbol , NoSymbol ],
+  actions=[ LatchGroup(group=+1), LatchGroup(group=+1), LatchGroup(group=+1), LatchGroup(group=+1)],
+  actions[Group3]=[ LatchGroup(group=+1), LatchGroup(group=+1), LatchGroup(group=+1), LatchGroup(group=+1)]
+  #actions[Group1]=[ LatchGroup(group=2), LatchGroup(group=2), LatchGroup(group=2), LatchGroup(group=2)],
+  #actions[Group3]=[ LatchGroup(group=4), LatchGroup(group=4), LatchGroup(group=4), LatchGroup(group=4)]
+  };
+key  <AB01>  {  [  0 , 0          ]  };
+key  <AB02>  {  [      1 , 1      ]  };
+key  <AB03>  {  [          2 , 2  ]  };
+key  <AB04>  {  [ 3 , 3           ]  };
+key  <AB05>  {  [  4 , 4          ]  };
+key  <AB06>  {  [      5 , 5      ]  };
+key  <AB07>  {  [          6 , 6  ]  };
+key  <AB08>  {  [        7 , 7    ]  };
+key  <AB09>  {  [ 8 , 8           ]  };
+key  <AB10>  {  [     9 , 9       ]  };
+
+    #key <LCTL> { [ Control_L , Control_L ] };
+    #key <LCTL> { [ Control_L  ] };
+    #modifier_map Control { <LCTL> };
+    #key <RALT> {
+    #    virtualMods= AltGr,
+    #    #symbols[Group1] = [ Alt_L , Alt_L ]
+    #    symbols[Group1] = [ Alt_L ]
+    #};  
+    #key <RALT> {
+    #     [ Alt_L , Alt_L  ]
+    #};  
+    #modifier_map Mod1 { <RALT> };
+    #modifier_map Mod1 { <RCTL> };
+    #modifier_map Mod1 { <MENU> };
+    #modifier_map Mod1 { <RWIN> };
+#key <LALT> { [ Control_L , Control_L ] };
+#replace key <LALT> { [ Control_L , Control_L ] };
+#replace key <LALT> { [ Control_L ] };
+#modifier_map Control { <LALT> , <LCTL> };
+#modifier_map Control { Alt_L , Control_L };
+#modifier_map Mod1 { Alt_R , Control_R };
+#modifier_map Control { <LALT> };
+#modifier_map Control { Control_L };
+#replace key <LALT> { [ Control_L, Control_L ] };
+#replace key <RALT> { [ Control_L, Control_L ] };
+#replace key <RALT> { [ Meta_L, Meta_L ] };
+#replace key <RALT> { [ Alt_L, Alt_L ] };
+
+#modifier_map Control { <LALT> };
+
+#replace key <RALT> { [ Alt_L ] };
+
+#key <RALT> { [ Control_L , Control_L ] };
+#modifier_map Control { <RALT> };
+key <LALT> { [ Control_L , Control_L ] };
+modifier_map Control { <LALT> };
+   key <RALT> {
+        virtualMods= AltGr,
+        symbols[Group1] = [ Alt_L , Alt_L ]
+    };  
+    key <MENU> {
+        virtualMods= AltGr,
+        symbols[Group1] = [ Alt_L , Alt_L ]
+    };  
+    key <RWIN> {
+        virtualMods= AltGr,
+        symbols[Group1] = [ Alt_L , Alt_L ]
+    };  
+    key <RCTL> {
+        virtualMods= AltGr,
+        symbols[Group1] = [ Alt_L , Alt_L ]
+    };  
+modifier_map Mod1 { <RALT> , <MENU> , <RWIN> , <RCTL>  };
+
+};
+};
+
