@@ -92,7 +92,7 @@ key  <AE11>  {  symbols[Group1] = [  b           ,  B          ] ,
                ,symbols[Group4] = [ guillemotright , leftdoublequotemark ]
 };
 key  <AE12>  {  symbols[Group1] = [  z           ,  Z          ] , 
-                symbols[Group2] = [   U0301    ]  
+                symbols[Group2] = [   grave    ]  
                ,symbols[Group3] = [ Cyrillic_ze    ,  Cyrillic_ZE ]
                ,symbols[Group4] = [ U0301 ]
 };
