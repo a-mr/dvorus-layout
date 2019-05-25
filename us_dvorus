@@ -1,0 +1,90 @@
+partial alphanumeric_keys modifier_keys
+xkb_symbols "dvorus" {
+
+    name[Group1]= "English (Dvorus)";
+
+    key <ESC> { [ Caps_Lock, Caps_Lock ] };
+
+    virtual_modifiers AltGr;
+    key <TLDE> { [ ISO_Level3_Latch ], virtualMods = AltGr };
+    key <LFSH> { [ ISO_First_Group  ], virtualMods = AltGr };
+    key <RTSH> { [ ISO_Last_Group   ], virtualMods = AltGr };
+
+    key  <AE01> { [ q         , Q  , U0308     , U0308      ] };
+    key  <AE02> { [ k         , K  , at        , at         ] };
+    key  <AE03> { [ y         , Y  , numbersign, numbersign ] };
+    key  <AE04> { [ u         , U  , dollar    , dollar     ] };
+    key  <AE05> { [ apostrophe, bar, ampersand, ampersand   ] };
+
+    key  <AE06>  { [ Left ] };
+    key  <AE07>  { [ Right ] };
+
+    key  <AE08> { [ d, D, less      , U2264      ] };
+    key  <AE09> { [ l, L, greater   , U2265      ] };
+    key  <AE10> { [ m, M, braceleft , braceleft  ] };
+    key  <AE11> { [ b, B, braceright, braceright ] };
+    key  <AE12> { [ z, Z, grave     , grave      ] };
+    
+    key <BKSP> { [ Tab , Tab ] };
+    key <TAB>  { [  BackSpace,    BackSpace ] };
+    key  <AD01>  { [ ISO_Level2_Latch ] };
+    modifier_map Shift { <AD01> };
+
+    key  <AD02> { [ s, S, bracketleft , bracketleft  ] };
+    key  <AD03> { [ o, O, bracketright, bracketright ] };
+    key  <AD04> { [ e, E, underscore  , underscore   ] };
+    key  <AD05> { [ a, A, backslash   , backslash    ] };
+
+    key  <AD06>  { [ Up ] };
+
+    // semicolon, non-breaking space
+    key  <AD07> { [ r, R, semicolon , U00A0    ] };
+    key  <AD08> { [ n, N, quotedbl  , quotedbl ] };
+    key  <AD09> { [ w, W, colon     , emdash   ] };
+
+    key <AD10> { [ ISO_Level3_Latch , ISO_Level3_Latch ,
+                   ISO_Level3_Latch , ISO_Level3_Latch ] };
+
+    key  <AD11> { [ v, V, percent   , percent  ] };
+    key  <AD12> { [ j, J, asciitilde, U00A0    ] }; // tilde, no-break space
+
+    key <CAPS> { [ Escape , Escape ] };
+
+    key  <AC01> { [ period, exclam  , period     , period      ] };
+    key  <AC02> { [ comma , question, comma      , comma       ] };
+    key  <AC03> { [ p     , P       , parenleft  , parenleft   ] };
+    key  <AC04> { [ i     , I       , asciicircum, asciicircum ] };
+    key  <AC05> { [ x     , X       , parenright , parenright  ] };
+
+    key  <AC06>  { [ Down ] };
+
+    key  <AC07> { [ c, C, plus    , U00B1 ] }; // plus , plus-minus
+    key  <AC08> { [ t, T, minus   , U2011 ] }; // minus, non-breaking hyphen
+    key  <AC09> { [ h, H, equal   , U2260 ] }; // equal, not equal
+    key  <AC10> { [ g, G, slash   , U00F7 ] };
+    key  <AC11> { [ f, F, asterisk, U00D7 ] };
+
+    key  <AB01> { [ 0, 0 ] };
+    key  <AB02> { [ 1, 1 ] };
+    key  <AB03> { [ 2, 2 ] };
+    key  <AB04> { [ 3, 3 ] };
+    key  <AB05> { [ 4, 4 ] };
+    key  <AB06> { [ 5, 5 ] };
+    key  <AB07> { [ 6, 6 ] };
+    key  <AB08> { [ 7, 7 ] };
+    key  <AB09> { [ 8, 8 ] };
+    key  <AB10> { [ 9, 9 ] };
+
+    key <LALT> { [ Control_L , Control_L ] };
+    modifier_map Control { <LALT> };
+
+    key <LCTL> { [ Alt_L , Alt_L ] };
+
+    key <RALT> {
+        virtualMods= AltGr,
+        [ Alt_R , Alt_R ]
+    };  
+    // RCTL is still Ctrl
+
+    modifier_map Mod1 { <RALT> , <LCTL> };
+};
