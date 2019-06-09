@@ -30,29 +30,29 @@ xkb_keymap {
         key <RTSH> { [ ISO_Last_Group ], virtualMods= AltGr  };  
 
         key  <AE01> { symbols [ Group1 ] = [ q            , Q            , U0308     , U0308      ]
-                    , symbols [ Group2 ] = [ Cyrillic_yu  , Cyrillic_YU  , quotedbl  , quotedbl   ] };
+                    };
         key  <AE02> { symbols [ Group1 ] = [ k            , K            , at        , at         ]
-                    , symbols [ Group2 ] = [ Cyrillic_yeru, Cyrillic_YERU, at        , at         ] };
+                    };
         key  <AE03> { symbols [ Group1 ] = [ y            , Y            , numbersign, numbersign ]
-                    , symbols [ Group2 ] = [ Cyrillic_ya  , Cyrillic_YA  , numerosign, numerosign ] };
+                    };
         key  <AE04> { symbols [ Group1 ] = [ u            , U            , dollar    , dollar     ]
-                    , symbols [ Group2 ] = [ Cyrillic_u   , Cyrillic_U   , U20BD     , U20BD      ] };
+                    };
         key  <AE05> { symbols [ Group1 ] = [ apostrophe   , bar          , ampersand , ampersand  ]
-                    , symbols [ Group2 ] = [ Cyrillic_softsign, Cyrillic_SOFTSIGN , Cyrillic_hardsign , Cyrillic_HARDSIGN ] };
+                    };
 
         key  <AE06>  { [ Left ] };
         key  <AE07>  { [ Right ] };
 
         key  <AE08> { symbols [ Group1 ] = [ d          , D          , less          , U2264               ]
-                    , symbols [ Group2 ] = [ Cyrillic_de, Cyrillic_DE, less          , U2264               ] };
+                    };
         key  <AE09> { symbols [ Group1 ] = [ l          , L          , greater       , U2265               ]
-                    , symbols [ Group2 ] = [ Cyrillic_el, Cyrillic_EL, greater       , U2265               ] };
+                    };
         key  <AE10> { symbols [ Group1 ] = [ m          , M          , braceleft     , braceleft           ]
-                    , symbols [ Group2 ] = [ Cyrillic_em, Cyrillic_EM, guillemotleft , doublelowquotemark  ] };
+                    };
         key  <AE11> { symbols [ Group1 ] = [ b          , B          , braceright    , braceright          ]
-                    , symbols [ Group2 ] = [ Cyrillic_be, Cyrillic_BE, guillemotright, leftdoublequotemark ] };
+                    };
         key  <AE12> { symbols [ Group1 ] = [ z          , Z          , grave         , grave               ]
-                    , symbols [ Group2 ] = [ Cyrillic_ze, Cyrillic_ZE, U0301         , U0301               ] };
+                    };
 
         key <BKSP> { [ Tab , Tab ] };
 
@@ -62,55 +62,55 @@ xkb_keymap {
         modifier_map Shift { <AD01> };
 
         key  <AD02> { symbols [ Group1 ] = [ s          , S          , bracketleft , bracketleft  ]
-                    , symbols [ Group2 ] = [ Cyrillic_es, Cyrillic_ES, Cyrillic_sha, Cyrillic_SHA ] };
+                    };
         key  <AD03> { symbols [ Group1 ] = [ o          , O          , bracketright, bracketright ]
-                    , symbols [ Group2 ] = [ Cyrillic_o , Cyrillic_O , Cyrillic_io , Cyrillic_IO  ] };
+                    };
         key  <AD04> { symbols [ Group1 ] = [ e          , E          , underscore  , underscore   ]
-                    , symbols [ Group2 ] = [ Cyrillic_ie, Cyrillic_IE, Cyrillic_e  , Cyrillic_E   ] };
+                    };
         key  <AD05> { symbols [ Group1 ] = [ a          , A          , backslash   , backslash    ]
-                    , symbols [ Group2 ] = [ Cyrillic_a , Cyrillic_A , backslash   , backslash    ] };
+                    };
 
         key  <AD06>  { [ Up ] };
 
         key  <AD07> { symbols [ Group1 ] = [ r          , R          , semicolon     , U00A0          ]
-                    , symbols [ Group2 ] = [ Cyrillic_er, Cyrillic_ER, semicolon     , U00A0          ] };// semicolon, non-breaking space
+                    };// semicolon, non-breaking space
         key  <AD08> { symbols [ Group1 ] = [ n          , N          , quotedbl      , quotedbl       ]
-                    , symbols [ Group2 ] = [ Cyrillic_en, Cyrillic_EN, Cyrillic_shcha, Cyrillic_SHCHA ] };
+                    };
         key  <AD09> { symbols [ Group1 ] = [ w          , W          , colon         , emdash         ]
-                    , symbols [ Group2 ] = [ Cyrillic_ve, Cyrillic_VE, colon         , emdash         ] };
+                    };
 
         key <AD10> { [ ISO_Level3_Latch ], type[Group1]="ONE_LEVEL" };
 
         key  <AD11> { symbols [ Group1 ] = [ v              , V              , percent   , percent ]
-                    , symbols [ Group2 ] = [ Cyrillic_che   , Cyrillic_CHE   , percent   , percent ] };
+                    };
         key  <AD12> { symbols [ Group1 ] = [ j              , J              , asciitilde, U00A0   ]
-                    , symbols [ Group2 ] = [ Cyrillic_shorti, Cyrillic_SHORTI, asciitilde, U00A0   ] }; // tilde, no-break space
+                    }; // tilde, no-break space
 
         key <CAPS> { [ Escape , Escape ] };
 
         key  <AC01> { symbols [ Group1 ] = [ period      , exclam      , period      , period       ]
-                    , symbols [ Group2 ] = [ period      , exclam      , period      , period       ] };
+                    };
         key  <AC02> { symbols [ Group1 ] = [ comma       , question    , comma       , comma        ]
-                    , symbols [ Group2 ] = [ comma       , question    , comma       , comma        ] };
+                    };
         key  <AC03> { symbols [ Group1 ] = [ p           , P           , parenleft   , parenleft    ]
-                    , symbols [ Group2 ] = [ Cyrillic_pe , Cyrillic_PE , parenleft   , parenleft    ] };
+                    };
         key  <AC04> { symbols [ Group1 ] = [ i           , I           , asciicircum , asciicircum  ]
-                    , symbols [ Group2 ] = [ Cyrillic_i  , Cyrillic_I  , Cyrillic_tse, Cyrillic_TSE ] };
+                    };
         key  <AC05> { symbols [ Group1 ] = [ x           , X           , parenright  , parenright   ]
-                    , symbols [ Group2 ] = [ Cyrillic_zhe, Cyrillic_ZHE, parenright  , parenright   ] };
+                    };
 
         key  <AC06>  { [ Down ] };
 
         key  <AC07> { symbols [ Group1 ] = [ c           , C           , plus    , U00B1 ]
-                    , symbols [ Group2 ] = [ Cyrillic_ka , Cyrillic_KA , plus    , U00B1 ] };// plus , plus-minus
+                    };// plus , plus-minus
         key  <AC08> { symbols [ Group1 ] = [ t           , T           , minus   , U2011 ]
-                    , symbols [ Group2 ] = [ Cyrillic_te , Cyrillic_TE , minus   , U2011 ] };// minus, non-breaking hyphen
+                    };// minus, non-breaking hyphen
         key  <AC09> { symbols [ Group1 ] = [ h           , H           , equal   , U2260 ]
-                    , symbols [ Group2 ] = [ Cyrillic_ha , Cyrillic_HA , equal   , U2260 ] };// equal, not equal
+                    };// equal, not equal
         key  <AC10> { symbols [ Group1 ] = [ g           , G           , slash   , U00F7 ]
-                    , symbols [ Group2 ] = [ Cyrillic_ghe, Cyrillic_GHE, slash   , U00F7 ] };
+                    };
         key  <AC11> { symbols [ Group1 ] = [ f           , F           , asterisk, U00D7 ]
-                    , symbols [ Group2 ] = [ Cyrillic_ef , Cyrillic_EF , U00B7   , U00D7 ] };
+                    };
         
         key  <AB01> { [ 0, 0 ] };
         key  <AB02> { [ 1, 1 ] };
