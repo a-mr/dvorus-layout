@@ -22,7 +22,7 @@ but adds also a pair of its own features; it can be summarized as follows:
  │AltGr│ Q   │ K @ │ Y # │ U $ │ | & │     │     │ D ≤ │ L ≥ │ M { │ B } │ Z ` │          │
  │latch│ q   │ k @ │ y # │ u $ │ ' & │  ←  │  →  │ d < │ l > │ m { │ b } │ z ` │   Tab ↹  │  
  ├─────┴──┲━━┷━━┳━━┷━━┳━━┷━━┳━━┷━━┱──┴──┬──┴──┬──┴──┲━━┷━━┳━━┷━━┳━━┷━━┳━━┷━━┱──┴──┬───────┤
- │ ⌫ Back ┃Shift┃ S [ ┃ O ] ┃ E _ ┃ A \ │     │ R   ┃ N " ┃ W — ┃AltGr┃ V % ┃ J   │ Enter │  
+ │<- Back ┃Shift┃ S [ ┃ O ] ┃ E _ ┃ A \ │     │ R   ┃ N " ┃ W — ┃AltGr┃ V % ┃ J   │ Enter │
  │   space┃Latch┃ s [ ┃ o ] ┃ e _ ┃ a \ │  ↑  │ r ; ┃ n " ┃ w : ┃latch┃ v % ┃ j ~ │   ⏎   │  
  ├────────┺┯━━━━┻┯━━━━┻┯━━━━┻┯━━━━┹┬────┴┬────┴┬────┺┯━━━━┻┯━━━━┻┯━━━━┻┯━━━━┹┬────┴┐      │  
  │         │ ! . │ ? , │ P ( │ I ^ │ X ) │     │ C ± │ T ‑ │ H ≠ │ G ÷ │ F × │ | | │      │
@@ -49,6 +49,10 @@ Use ckbcomp to convert from xkb to kmap files. In Debian-based distributions thi
 XKBLAYOUT="us"
 XKBVARIANT="dvorus"
 ```
+In Ubuntu one needs to edit `/etc/default/keyboard`, then run `dpkg-reconfigure`
+confirming that he wants to keep the layout, after which layout seems to be
+compiled into kernel/initramfs.
+
 Xkb symbols can be loaded manually by those commands (NOT recommended):
 ```
 setxkbmap -layout us -variant dvorus
@@ -71,7 +75,7 @@ It's done in 3 steps:
  │AltGr│ Ю   │ Ы @ │ Я № │ У ₽ │ Ь Ъ │     │     │ Д ≤ │ Л ≥ │ М „ │ Б “ │ З   │          │
  │latch│ ю " │ ы @ │ я № │ у ₽ │ ь ъ │  ←  │  →  │ д < │ л > │ м « │ б » │ з   │   Tab ↹  │  
  ├─────┴──┲━━┷━━┳━━┷━━┳━━┷━━┳━━┷━━┱──┴──┬──┴──┬──┴──┲━━┷━━┳━━┷━━┳━━┷━━┳━━┷━━┱──┴──┬───────┤
- │ ⌫ Back ┃Shift┃ С Ш ┃ О Ё ┃ Е Э ┃ А \ │     │ Р   ┃ Н Щ ┃ В — ┃AltGr┃ Ч % ┃ Й   │ Enter │  
+ │<- Back ┃Shift┃ С Ш ┃ О Ё ┃ Е Э ┃ А \ │     │ Р   ┃ Н Щ ┃ В — ┃AltGr┃ Ч % ┃ Й   │ Enter │
  │   space┃Latch┃ с ш ┃ о ё ┃ е э ┃ а \ │  ↑  │ р ; ┃ н щ ┃ в : ┃latch┃ ч % ┃ й ~ │   ⏎   │  
  ├────────┺┯━━━━┻┯━━━━┻┯━━━━┻┯━━━━┹┬────┴┬────┴┬────┺┯━━━━┻┯━━━━┻┯━━━━┻┯━━━━┹┬────┴┐      │  
  │         │ ! . │ ? , │ П ( │ И Ц │ Ж ) │     │ К ± │ Т ‑ │ Х ≠ │ Г ÷ │ Ф × │ | | │      │

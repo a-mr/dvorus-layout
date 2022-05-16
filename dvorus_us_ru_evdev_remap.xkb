@@ -13,6 +13,8 @@ xkb_keymap {
 
     xkb_compatibility {
         include "complete"
+        // include "complete+ledscroll(group_lock)"
+        include "complete"
         interpret.repeat= False;
         setMods.clearLocks= True;
         latchMods.clearLocks= True;
@@ -21,7 +23,8 @@ xkb_keymap {
     };
 
     xkb_symbols {
-        include "pc+inet(evdev)+terminate(ctrl_alt_bksp)"
+        // include "pc+inet(evdev)+terminate(ctrl_alt_bksp)"
+        include "pc+us+ru:3+inet(evdev)"
         key <ESC> { [ Caps_Lock, Caps_Lock ] };
 
         virtual_modifiers AltGr;
